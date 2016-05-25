@@ -61,6 +61,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ajax\dataReceiver.ashx.cs">
+      <DependentUpon>dataReceiver.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ajax\serialize.ashx.cs">
       <DependentUpon>serialize.ashx</DependentUpon>
     </Compile>
@@ -78,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ajax\serialize.ashx" />
+    <Content Include="ajax\dataReceiver.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
