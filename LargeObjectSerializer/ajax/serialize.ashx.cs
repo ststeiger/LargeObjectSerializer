@@ -15,11 +15,21 @@ namespace LargeObjectSerializer.ajax
 
         public static string GetConnectionString()
         {
-
             System.Data.SqlClient.SqlConnectionStringBuilder csb = new System.Data.SqlClient.SqlConnectionStringBuilder();
 
             csb.DataSource = @"VMSTZHDB\HBD_DBH";
             csb.InitialCatalog = "HBD_CAFM3_Produktiv";
+
+
+            if (!string.Equals(System.Environment.UserDomainName, "COR", System.StringComparison.InvariantCultureIgnoreCase))
+            {
+                csb.DataSource = System.Environment.MachineName;
+                csb.InitialCatalog = "RoomPlanning";
+            }
+            
+
+
+
             csb.IntegratedSecurity = true;
 
             return csb.ConnectionString;
